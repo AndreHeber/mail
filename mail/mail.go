@@ -15,11 +15,26 @@ type Email struct {
 	Attachments []string `json:"attachments" xml:"attachments" form:"attachments"`
 }
 
-// Init initailzes mail module
+// Init initializes mail module
 func Init(app *fiber.App) {
 	// send endpoint
+	app.Get("/mails", getMails)
 	app.Get("/mail/send/:id", sendMail)
 	app.Post("/mail/create", createMail)
+}
+
+type GetMailsResponse struct {
+	ID   uint64 `json:"id" xml:"id" form:"id"`
+	Name string `json:"name" xml:"name" form:"name"`
+}
+
+func getMails(c *fiber.Ctx) error {
+	emails := []GetMailsResponse{
+		{ID: 1, Name: "AAA"},
+		{ID: 2, Name: "BBB"},
+	}
+
+	return c.JSON(emails)
 }
 
 func sendMail(c *fiber.Ctx) error {

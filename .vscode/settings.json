@@ -1,0 +1,7 @@
+{
+    "go.useLanguageServer": true,
+    "go.languageServerExperimentalFeatures": {
+        "diagnostics": true,
+        "documentLink": true
+    }
+}

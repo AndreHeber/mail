@@ -1,0 +1,8 @@
+{
+    "name": "testmail",
+    "from": "andre.heber@gmx.net",
+	"to": "a.heber@sabienzia.com",
+	"subject": "Test",
+	"content": "flib flab dubadubadub",
+	"attachments": []
+}
